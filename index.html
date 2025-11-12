@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organograma Infográfico - SEJUSP/AP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <main class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-[#0d47a1] mb-4">Organograma Hierárquico</h1>
+            <p class="text-xl text-gray-700">Secretaria de Estado da Justiça e Segurança Pública (SEJUSP/AP)</p>
+        </header>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            
+            <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col justify-center">
+                <h2 class="text-2xl font-bold text-[#0d47a1] mb-4">Visão Geral da Estrutura</h2>
+                <p class="text-gray-600 mb-6">A SEJUSP/AP é composta por seis áreas principais. O gráfico de rosca ilustra a distribuição das unidades de primeiro nível em cada uma dessas áreas, destacando as Unidades de Assessoramento como o maior grupo em número de unidades distintas.</p>
+                <div class="chart-container">
+                    <canvas id="overviewChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col justify-center">
+                <h2 class="text-2xl font-bold text-[#0d47a1] mb-4">Complexidade das Unidades</h2>
+                <p class="text-gray-600 mb-6">Analisando as unidades de execução e instrumentais, podemos comparar sua complexidade interna pelo número de subunidades e núcleos. O IESP/AP e a Coordenadoria de Inteligência apresentam as estruturas internas mais ramificadas, indicando uma maior especialização de funções.</p>
+                <div class="chart-container">
+                    <canvas id="complexityChart"></canvas>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="bg-white rounded-lg shadow-xl p-6 md:p-10">
+            <h2 class="text-3xl font-bold text-[#0d47a1] mb-8 text-center">Estrutura Hierárquica Detalhada</h2>
+            
+            <div class="space-y-4 org-container">
+                
+                <div class="p-4 bg-[#0d47a1] text-white rounded-lg shadow-md font-bold text-lg">I. DIREÇÃO SUPERIOR</div>
+                <ul class="pl-6 md:pl-10 border-l-4 border-[#0d47a1] space-y-3">
+                    <li>
+                        <div class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">
+                            <span class="font-semibold text-gray-800">1. Deliberação Colegiada</span>
+                            <ul class="pl-6 mt-2 space-y-2 border-l-2 border-gray-300">
+                                <li class="p-2 bg-gray-50 rounded text-sm">1.1. Conselho de Justiça, Cidadania e Direitos Humanos</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">1.2. Conselho Penitenciário</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">1.3. Conselho de Entorpecentes</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">
+                            <span class="font-semibold text-gray-800">2. Deliberação Singular</span>
+                             <ul class="pl-6 mt-2 space-y-2 border-l-2 border-gray-300">
+                                <li class="p-2 bg-gray-50 rounded text-sm">2.1. Secretário de Estado da Justiça e Segurança Pública</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">2.2. Secretário Adjunto</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="p-4 bg-[#1976d2] text-white rounded-lg shadow-md font-bold text-lg mt-8">II. UNIDADES DE ASSESSORAMENTO</div>
+                <ul class="pl-6 md:pl-10 border-l-4 border-[#1976d2] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">3. Gabinete</li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">4. Assessoria de Controle Interno</li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">5. Corregedoria</li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">6. Ouvidoria da Defesa Social</li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">7. Gabinete da Gestão Integrada em Segurança Pública</li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">8. Assessoria de Gestão Estratégica de Informações Estatísticas</li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">9. Assessoria de Desenvolvimento Institucional</li>
+                </ul>
+
+                <div class="p-4 bg-[#42a5f5] text-white rounded-lg shadow-md font-bold text-lg mt-8">III. UNIDADES DE EXECUÇÃO PROGRAMÁTICA</div>
+                <ul class="pl-6 md:pl-10 border-l-4 border-[#42a5f5] space-y-3">
+                    <li>
+                        <div class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">
+                            <span class="font-semibold text-gray-800">10. Instituto de Ensino de Segurança Pública do Estado do Amapá – IESP/AP</span>
+                            <ul class="pl-6 mt-2 space-y-2 border-l-2 border-gray-300">
+                                <li class="p-2 bg-gray-50 rounded text-sm">10.1. Unidade de Ensino</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">10.2. Unidade de Planejamento</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">10.3. Unidade de Pesquisa e Extensão</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">10.4. Unidade Administrativa</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">10.5. Unidade de Execução</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">
+                            <span class="font-semibold text-gray-800">11. Coordenadoria de Inteligência e Operações</span>
+                            <ul class="pl-6 mt-2 space-y-2 border-l-2 border-gray-300">
+                                <li class="p-2 bg-gray-50 rounded text-sm">11.1. Unidade de Tecnologia da Informação de Inteligência e Operações</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">11.2. Unidade de Processamento e Análise de Inteligência e Operações</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">11.3. Núcleo de Inteligência e Contrainteligência</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">11.4. Núcleo de Operações</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">
+                            <span class="font-semibold text-gray-800">12. Centro Integrado de Operações de Defesa Social – CIODES</span>
+                            <ul class="pl-6 mt-2 space-y-2 border-l-2 border-gray-300">
+                                <li class="p-2 bg-gray-50 rounded text-sm">12.1. Núcleo de Controle de Qualidade (com 3 subunidades)</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">12.2. Núcleo de Tecnologia da Informação (com 2 subunidades)</li>
+                            </ul>
+                        </div>
+                    </li>
+                     <li>
+                        <div class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">
+                            <span class="font-semibold text-gray-800">13. Coordenadoria de Segurança Comunitária</span>
+                            <ul class="pl-6 mt-2 space-y-2 border-l-2 border-gray-300">
+                                <li class="p-2 bg-gray-50 rounded text-sm">13.1. Núcleo de Capacitação Comunitária (com 1 subunidade)</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm font-semibold">14. Coordenadoria de Operações Aéreas</li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm font-semibold">15. Coordenadoria de Divisas e Fronteiras</li>
+                </ul>
+                
+                <div class="p-4 bg-[#64b5f6] text-white rounded-lg shadow-md font-bold text-lg mt-8">IV. UNIDADES DE EXECUÇÃO INSTRUMENTAL</div>
+                <ul class="pl-6 md:pl-10 border-l-4 border-[#64b5f6] space-y-3">
+                     <li>
+                        <div class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">
+                            <span class="font-semibold text-gray-800">16. Coordenadoria Administrativo-Financeira</span>
+                            <ul class="pl-6 mt-2 space-y-2 border-l-2 border-gray-300">
+                                <li class="p-2 bg-gray-50 rounded text-sm">16.1. Núcleo Administrativo e Financeiro (com 3 subunidades)</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">16.2. Núcleo de Contratos e Convênios (com 2 subunidades)</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm font-semibold">17. Núcleo de Gestão de Compras e Contratações</li>
+                     <li>
+                        <div class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">
+                            <span class="font-semibold text-gray-800">18. Coordenadoria de Acompanhamento de Projetos e Logística</span>
+                            <ul class="pl-6 mt-2 space-y-2 border-l-2 border-gray-300">
+                                <li class="p-2 bg-gray-50 rounded text-sm">18.1. Núcleo de Manutenção Geral</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">18.2. Núcleo de Acompanhamento de Projetos</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">18.3. Núcleo de Logística (com 3 subunidades)</li>
+                            </ul>
+                        </div>
+                    </li>
+                     <li>
+                        <div class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">
+                            <span class="font-semibold text-gray-800">19. Coordenadoria de Arquitetura e Engenharia</span>
+                            <ul class="pl-6 mt-2 space-y-2 border-l-2 border-gray-300">
+                                <li class="p-2 bg-gray-50 rounded text-sm">19.1. Unidade de Projetos de Arquitetura e Engenharia</li>
+                            </ul>
+                        </div>
+                    </li>
+                     <li>
+                        <div class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">
+                            <span class="font-semibold text-gray-800">20. Coordenadoria de Programas e Projetos</span>
+                            <ul class="pl-6 mt-2 space-y-2 border-l-2 border-gray-300">
+                                <li class="p-2 bg-gray-50 rounded text-sm">20.1. Núcleo de Transferências Discricionárias e Parcerias (com 4 subunidades)</li>
+                                <li class="p-2 bg-gray-50 rounded text-sm">20.2. Núcleo de Repasse Fundo a Fundo (com 3 subunidades)</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="p-4 bg-[#90caf9] text-gray-900 rounded-lg shadow-md font-bold text-lg mt-8">V. ÓRGÃOS VINCULADOS</div>
+                 <ul class="pl-6 md:pl-10 border-l-4 border-[#90caf9] grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">21. Polícia Civil do Estado do Amapá</li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">22. Polícia Científica do Estado do Amapá</li>
+                </ul>
+
+                <div class="p-4 bg-[#90caf9] text-gray-900 rounded-lg shadow-md font-bold text-lg mt-8">VI. ENTIDADES VINCULADAS</div>
+                 <ul class="pl-6 md:pl-10 border-l-4 border-[#90caf9] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">25. Departamento Estadual de Trânsito – DETRAN</li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">26. Instituto de Defesa do Consumidor do Estado do Amapá – PROCON</li>
+                    <li class="p-3 bg-white border border-gray-200 rounded-md shadow-sm">27. Instituto de Administração Penitenciária do Estado do Amapá – IAPEN</li>
+                </ul>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 mt-12 bg-white shadow-inner">
+        <p class="text-gray-600">Infográfico gerado como uma aplicação de página única.</p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+
+            const overviewCtx = document.getElementById('overviewChart').getContext('2d');
+            new Chart(overviewCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        "Direção Superior", 
+                        "Assessoramento", 
+                        "Exec. Programática", 
+                        "Exec. Instrumental", 
+                        "Órgãos Vinculados", 
+                        "Entidades Vinculadas"
+                    ],
+                    datasets: [{
+                        label: 'Número de Unidades',
+                        data: [2, 7, 6, 5, 2, 3],
+                        backgroundColor: [
+                            '#0d47a1',
+                            '#1976d2',
+                            '#42a5f5',
+                            '#64b5f6',
+                            '#90caf9',
+                            '#bbdefb'
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+
+            const complexityCtx = document.getElementById('complexityChart').getContext('2d');
+            new Chart(complexityCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        "IESP/AP",
+                        ['Coord. de', 'Inteligência e', 'Operações'],
+                        "CIODES",
+                        ['Coord. Segurança', 'Comunitária'],
+                        ['Coord.', 'Admin-Financeira'],
+                        ['Coord. Acomp.', 'Projetos e Logística'],
+                        ['Coord. Programas', 'e Projetos']
+                    ],
+                    datasets: [{
+                        label: 'Nº de Subunidades/Núcleos',
+                        data: [5, 4, 2, 1, 2, 3, 2],
+                        backgroundColor: '#1976d2',
+                        borderColor: '#0d47a1',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+        };
+    </script>
+
+</body>
+</html>
